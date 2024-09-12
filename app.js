@@ -82,5 +82,5 @@ const checkBothArrEqu = () => {
 
 const higScr = (highestScore) => {
     const h3 = document.querySelector('h3')
-    h3.innerText = `Highest Score: ${highestScore}`
+    h3.innerText = `Highest Score: ` + highestScore
 } 
