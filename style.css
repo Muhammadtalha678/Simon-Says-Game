@@ -15,16 +15,16 @@ body{
     justify-content: center;
 }
 
-#firstColor{
+.firstColor{
     background-color: brown;
 }
-#secondColor{
+.secondColor{
     background-color: aqua;
 }
-#thirdColor{
+.thirdColor{
     background-color: blueviolet;
 }
-#fourthColor{
+.fourthColor{
     background-color: blue;
 }
 
