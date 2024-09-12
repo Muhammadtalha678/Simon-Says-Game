@@ -2,7 +2,7 @@
 let userGen = []
 let gameGen = []
 
-let randID = ['firstColor','secondColor','thirdColor','fourthColor']
+let randID = ['btn-1','btn-2','btn-3','btn-4']
 
 let h2 = document.querySelector('h2')
 
@@ -28,20 +28,22 @@ const levelUp = ()=>{
     h2.innerText = `Level ${level}`
     let randIdx = Math.floor(Math.random()*4)
     let randId =  randID[randIdx]
-    gameGen.push(randId)
     let randBtn = document.querySelector(`#${randId}`)
-    btnFlash(randBtn,randId)
+    gameGen.push(randId)
+    console.log('gameSeq',gameGen);
+    btnFlash(randBtn)
 }
 
-const btnFlash = (btn,randId) =>{
-    btn.removeAttribute('id')
-    console.log(gameGen);
-    console.log(btn);
+const btnFlash = (btn) =>{
+    btn.classList.add('btnWhite')
     
     setTimeout(() => {
-        btn.setAttribute('id',`${randId}`)
-        
-        console.log(btn);
-    }, 200);
+        btn.classList.remove('btnWhite')
+    }, 300);
     
 } 
+
+const userPress = (btn)=>{
+    console.log(btn);
+    
+}
