@@ -24,6 +24,7 @@ document.addEventListener('keypress',function(){
 // match correctly sequence of gameSeq list
 
 const levelUp = ()=>{
+    userGen = []
     level++
     h2.innerText = `Level ${level}`
     let randIdx = Math.floor(Math.random()*4)
@@ -44,6 +45,42 @@ const btnFlash = (btn) =>{
 } 
 
 const userPress = (btn)=>{
-    console.log(btn);
+    if (gameStart) {
+        btnFlash(btn)
+    let usrBtnId = btn.getAttribute('id')
+    userGen.push(usrBtnId)
+    console.log(userGen);
     
+    checkBothArrEqu()
+    }
 }
+
+const checkBothArrEqu = () => {
+    if (userGen[userGen.length - 1] === gameGen[userGen.length - 1]) {
+        if (userGen.length == gameGen.length) {
+            setTimeout(() => {
+                levelUp()
+            }, 500);
+        }
+    }
+    else{
+        if (highestScore < level) {
+            higScr(level)
+        }
+        h2.innerText = `Game Over! Your score was ${level}`
+        level = 0
+        gameGen = []
+        gameStart = false
+        document.body.style.backgroundColor = 'red'
+        
+        setTimeout(() => {
+            document.body.style.backgroundColor = 'white'
+        }, 100);
+
+    }
+}
+
+const higScr = (highestScore) => {
+    const h3 = document.querySelector('h3')
+    h3.innerText = `Highest Score: ${highestScore}`
+} 
