@@ -16,16 +16,16 @@ body{
 }
 
 #firstColor{
-    background-color: lightcoral;
+    background-color: brown;
 }
 #secondColor{
-    background-color: lightblue;
+    background-color: aqua;
 }
 #thirdColor{
-    background-color: lightcyan;
+    background-color: blueviolet;
 }
 #fourthColor{
-    background-color: lightseagreen;
+    background-color: blue;
 }
 
 .btnWhite{

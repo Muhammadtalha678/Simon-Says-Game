@@ -25,12 +25,23 @@ document.addEventListener('keypress',function(){
 
 const levelUp = ()=>{
     level++
+    h2.innerText = `Level ${level}`
     let randIdx = Math.floor(Math.random()*4)
     let randId =  randID[randIdx]
-    let randBtn = document.querySelector("#"+randId)
-    btnFlash(btn)
+    gameGen.push(randId)
+    let randBtn = document.querySelector(`#${randId}`)
+    btnFlash(randBtn,randId)
 }
 
-const btnFlash = () =>{
-
+const btnFlash = (btn,randId) =>{
+    btn.removeAttribute('id')
+    console.log(gameGen);
+    console.log(btn);
+    
+    setTimeout(() => {
+        btn.setAttribute('id',`${randId}`)
+        
+        console.log(btn);
+    }, 200);
+    
 } 
