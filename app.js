@@ -28,7 +28,9 @@ const levelUp = ()=>{
     let randIdx = Math.floor(Math.random()*4)
     let randId =  randID[randIdx]
     let randBtn = document.querySelector("#"+randId)
-        console.log(randBtn);
-        
+    btnFlash(btn)
 }
 
+const btnFlash = () =>{
+
+} 
